@@ -5,16 +5,13 @@ This wiki is the durable synthesis layer between the raw sources and future ques
 ## Current Focus
 
 - Capture the architecture and operating loop of the LLM wiki workflow.
-- Turn visual references into durable source pages and synthesis pages.
+- Keep the starter repo portable, low-dependency, and safe to publish.
 
 ## Priority Gaps
 
-- Add more concrete examples of ingesting real source documents, not just diagrams.
+- Add more concrete examples of ingesting real source documents such as PDFs, web pages, and spreadsheets.
 - Decide which output path should come next: markdown briefs, slide export, or chart generation.
 
 ## Related Pages
 
 - [LLM Wiki Architecture](analyses/llm-wiki-architecture.md)
-- [LLM Wiki Diagram 1](sources/llm-wiki-diagram-1.md)
-- [LLM Wiki Diagram 2](sources/llm-wiki-diagram-2.md)
-- [LLM Wiki Diagram 3](sources/llm-wiki-diagram-3.md)

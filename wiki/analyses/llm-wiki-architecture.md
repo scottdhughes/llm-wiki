@@ -1,28 +1,30 @@
 ---
 title: "LLM Wiki Architecture"
 created: 2026-04-05
-last_updated: 2026-04-07
-source_count: 3
+last_updated: 2026-04-08
+source_count: 4
 status: draft
 ---
 
 # LLM Wiki Architecture
 
-Synthesis of three diagrams describing an agent-maintained markdown wiki that turns raw sources into a compounding knowledge base through ingest, Q&A, outputs, and file-back loops.
+Synthesis of the repo's operating model: immutable raw sources, a compiled markdown wiki, portable agent instructions, and CLI maintenance loops that keep knowledge durable and reusable.
 
 ## Architecture At A Glance
 
 - `raw/` is the immutable intake layer for files, images, and other source artifacts.
 - `wiki/` is the compiled markdown knowledge base where summaries, concepts, links, and analyses live.
+- `AGENTS.md`, `CLAUDE.md`, and `PROMPTS.md` define the portable workflow for agents that operate on the repo.
 - Q&A happens against the wiki, not directly against the full raw corpus.
 - Outputs are rendered from the wiki, then important results are written back into the wiki so future work starts from a stronger baseline.
-- Maintenance is continuous through indexing, linting, search, and heal suggestions.
+- Maintenance is continuous through indexing, linting, status snapshots, search, watch mode, and hook-driven refreshes.
 
 ## Evidence
 
-- [LLM Wiki Diagram 1](../sources/llm-wiki-diagram-1.md) emphasizes the five-step pipeline and the knowledge-compounding feedback loop. [Source: llm-wiki-diagram-1.md]
-- [LLM Wiki Diagram 2](../sources/llm-wiki-diagram-2.md) decomposes the engine into compile, Q&A, linting, and indexing subsystems. [Source: llm-wiki-diagram-2.md]
-- [LLM Wiki Diagram 3](../sources/llm-wiki-diagram-3.md) presents the architecture as a user-facing workflow and product story. [Source: llm-wiki-diagram-3.md]
+- The main architecture loop, command surface, and project layout are described in the root README. [Source: README.md]
+- The agent operating rules, page conventions, and maintenance loop are defined in the repo guidelines. [Source: AGENTS.md]
+- The schema file defines the durable distinction between `raw/`, `wiki/`, and `outputs/`. [Source: CLAUDE.md]
+- The prompt library shows how the workflow is meant to be driven by a local-file-aware coding agent. [Source: PROMPTS.md]
 
 ## Operating Loop
 
@@ -35,28 +37,26 @@ Synthesis of three diagrams describing an agent-maintained markdown wiki that tu
 
 ## Key Points
 
-- All three diagrams agree that the wiki, not the raw source store, is the main operational surface for future reasoning.
+- The wiki, not the raw source store, is the main operational surface for future reasoning.
 - The most important loop is not ingest alone; it is ingest plus synthesis plus file-back.
 - Obsidian and CLI tooling are support layers around the same underlying markdown knowledge base.
+- Managed hooks and watch mode are convenience layers, not separate sources of truth.
 - The architecture assumes the wiki stays small and curated enough that a lightweight search-and-read workflow remains practical.
 
 ## Design Implications For This Repo
 
-- Image files should be first-class sources because diagrams often contain architecture intent that is missing from prose.
+- Image files should remain first-class sources even if the starter repo itself ships without bundled personal images.
 - The first paragraph of each page matters disproportionately because it drives both the index and fast retrieval.
 - `heal` should act as a maintenance queue, not just a checker, by pointing to missing ingests, broken links, orphan pages, and duplicate topics.
 - The repo should bias toward reusable markdown synthesis first, with output renderers layered on top later.
 
 ## Contradictions
 
-- No direct contradictions appear across the three diagrams, but Diagram 1 is more aggressive about "no RAG needed" than the repo should promise in general use.
+- The repo stays intentionally simple, but the docs should not over-promise that lightweight local search removes the need for other retrieval strategies in every domain.
 
 ## Related Pages
 
 - [Overview](../overview.md)
-- [LLM Wiki Diagram 1](../sources/llm-wiki-diagram-1.md)
-- [LLM Wiki Diagram 2](../sources/llm-wiki-diagram-2.md)
-- [LLM Wiki Diagram 3](../sources/llm-wiki-diagram-3.md)
 
 ## Open Questions
 

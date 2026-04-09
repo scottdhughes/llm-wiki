@@ -82,10 +82,6 @@ Treat this repo as a persistent thinking layer: a structured second brain that c
 ## Example Content
 
 - [Architecture synthesis](./wiki/analyses/llm-wiki-architecture.md)
-- [Sample generated brief](./reports/knowledge-compounds-brief.md)
-- [Ingested diagram source 1](./wiki/sources/llm-wiki-diagram-1.md)
-- [Ingested diagram source 2](./wiki/sources/llm-wiki-diagram-2.md)
-- [Ingested diagram source 3](./wiki/sources/llm-wiki-diagram-3.md)
 - [Overview](./wiki/overview.md)
 - [Prompt library](./PROMPTS.md)
 
