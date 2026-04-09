@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "llm-wiki"
+version = "0.1.0"
+description = "Agent-native starter kit for maintaining a persistent markdown wiki from raw sources."
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [{ name = "OpenAI Codex" }]
+dependencies = ["trafilatura>=2.0.0,<3.0.0"]
+
+[project.optional-dependencies]
+office = ["pypdf>=5.0.0", "python-docx>=1.2.0", "openpyxl>=3.1.0"]
+watch = ["watchfiles>=1.1.0"]
+dev = ["pre-commit>=4.5.0"]
+
+[project.scripts]
+llm-wiki = "llm_wiki.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["llm_wiki"]

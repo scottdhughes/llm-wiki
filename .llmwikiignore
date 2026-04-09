@@ -1,0 +1,6 @@
+# Paths to skip during `compile` and raw-file health checks.
+# Syntax is path-oriented glob matching relative to the workspace root.
+# Examples:
+# raw/inbox/archive/
+# raw/inbox/*.tmp
+# raw/assets/screenshots/
